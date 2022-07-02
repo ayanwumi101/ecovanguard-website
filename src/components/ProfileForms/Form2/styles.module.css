@@ -1,0 +1,58 @@
+.profile_container{
+    width: 95%;
+    margin: auto;
+    padding-bottom: 25px;
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.heading h2{
+    margin-bottom: 1rem;
+}
+
+.form_container{
+    max-width: 400px;
+    margin: auto;
+}
+
+.form_control{
+    width: 100%;
+    margin: 20px auto;
+}
+
+
+input[type=text], select{
+    width: 100%;
+    padding: 12px;
+    border: 1.95px solid rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255);
+    border-radius: 5px;
+    outline: none;
+}
+
+.submit{
+    width: 100%;
+    margin: 20px auto;
+    background-color: rgb(77, 77, 250);
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+}
+
+input[type=submit]{
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bolder;
+}
+
+

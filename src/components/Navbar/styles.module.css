@@ -1,0 +1,147 @@
+.navbar_container{
+    width: 95%;
+    margin: auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.links{
+    width: 33%;
+}
+
+.brand{
+    width: 200px;
+    height: auto;
+}
+
+.logo{
+    width: 100%;
+}
+
+.lists{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.login{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 4px 8px;
+    color: rgb(8, 160, 8);
+}
+
+.button{
+    background: transparent;
+    border: none;
+    width: 30px;
+    height: auto;
+    margin: 20px 50px;
+}
+.back_btn{
+    width: 100%;
+}
+
+.icon{
+    display: none;
+}
+
+.sidenav_links li{
+    color: rgb(8, 160, 8);
+    display: flex;
+    flex-direction: column;
+    margin: 18px 0px;
+    padding: 15px 12px;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sidenav_container{
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    overflow-x: hidden;
+    transition: 1.5s;
+}
+
+.close_icon{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: black;
+    text-align: right;
+}
+
+.sidenav_btn{
+    background: transparent;
+    border: none;
+    padding: 8px;
+    position: absolute;
+    right: 85px;
+}
+
+.sidenav_btn:hover{
+    background-color: rgb(201, 199, 199);
+    padding: 8px;
+}
+
+.sidenav_modal{
+    background-color: hsla(0, 0%, 0%, 0.75);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    position: fixed;
+    overflow-x: hidden;
+    transition: 1.5s;
+    /* display: none; */
+}
+
+
+
+
+@media screen and (max-width: 800px){
+    .links{
+        display: none;
+        width: 100%;
+    }
+
+    .button{
+        margin: 20px;
+    }
+
+    .sidenav_links{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 35px;
+    }
+
+    .icon{
+        display: block;
+        font-size: 23px;
+    }
+
+    .login{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        margin-top: 18px;
+        cursor: pointer;
+    }
+
+}

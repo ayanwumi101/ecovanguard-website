@@ -1,0 +1,131 @@
+.profile_container{
+    max-width: 900px;
+    margin: auto;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center; 
+    margin: auto;
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.heading img{
+    position: absolute;
+    right: 0;
+}
+
+
+.editIcon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.columns_container{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.first_column, .second_column{
+    max-width: 450px;
+    height: auto;
+}
+
+input[type=text]{
+    width: 100%;
+    padding: 12px;
+    color: black;
+    background-color:white;
+    border: 1.95px solid black;
+    border-radius: 3px;
+}
+
+.form_control{
+    margin: 18px 0;
+}
+
+.profile_image{
+    width: 185px;
+    height: 160px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.avatar{
+    width: 100%;
+    border: 2px solid #4ae;
+    border-radius: 12px;
+}
+
+.text{
+    margin-bottom: 18px;
+}
+
+.sub_heading{
+    margin: 10px 0;
+}
+
+.teams, .participation{
+    list-style-type: disc;
+    margin: 5px 25px;
+}
+
+p{
+    font-size: small;
+    margin-left: 10px;
+}
+
+.other_details{
+    max-width: 100%;
+    margin-top: 15px;
+}
+
+.teams{
+    display: flex;
+    width: auto;
+    gap: 30px;
+}
+
+.teams li, .participation li {
+    color: black;
+    font-size: 15px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    .profile_container{
+        padding: 0 13px;
+    }
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .first_column,.second_column{
+        max-width: 450px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    .other_details{
+        padding: 0 20px;
+    }
+
+    .heading img{
+        position: absolute;
+        right: 15px;
+    }
+
+}

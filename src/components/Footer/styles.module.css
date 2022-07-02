@@ -1,0 +1,41 @@
+footer{
+    background-color: rgb(9, 95, 110);
+    padding: 20px;
+    margin-top: 45px;
+}
+
+.contents{
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.contents p{
+    margin: 10px 0;
+}
+
+.social{
+    max-width: 320px;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+.social p{
+    margin-left: 0;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 18px 0;
+}
+
+.icons i{
+    font-size: 25px;
+}
