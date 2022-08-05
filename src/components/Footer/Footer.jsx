@@ -6,20 +6,23 @@ const Footer = () => {
   return (
     <footer>
       <div className={styles.contents}>
-        <div className="box">
-          <h5>About Us</h5>
+
+        <div className={styles.box}>
+          <h4>About Us</h4>
           <p>Our Location</p>
           <p>Executives</p>
           <p>Partners</p>
         </div>
-        <div className="box">
-          <h5>Club's Policy</h5>
+
+        <div className={styles.box}>
+          <h4>Club's Policy</h4>
           <p>Privacy Policy</p>
           <p>Our location</p>
           <p>FAQ</p>
         </div>
-        <div className="box">
-          <h5>Projects</h5>
+
+        <div className={styles.box}>
+          <h4>Projects</h4>
           <p>Gallery</p>
           <p>Blog</p>
           <p>Calendar</p>

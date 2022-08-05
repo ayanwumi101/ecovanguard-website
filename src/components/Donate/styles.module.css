@@ -1,0 +1,184 @@
+.donate_container{
+    width: 100%;
+}
+
+.heading{
+    text-align: center;
+    margin: 25px auto;
+}
+
+.hero_section{
+    width: 100%;
+    background-color: black;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.hero_content{
+    max-width: 950px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero_image{
+    max-width: 500px;
+    height: auto;
+}
+
+.hero_image img{
+    width: 100%;
+}
+
+.hero_text{
+    color: white;
+    max-width: 325px;
+    margin-bottom: 30px;
+}
+
+.hero_text h2{
+    color: #4ae;
+    margin-bottom: 15px;
+}
+
+.hero_text p{
+    margin: 0;
+    font-size: 18px;
+}
+
+.hero_text p strong{
+    color: green;
+}
+
+.donation_sub_container{
+    width: 100%;
+    background-color: white;
+    height: 100%;
+}
+
+.donation{
+    max-width: 950px;
+    margin: auto;
+    padding-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.questions{
+    max-width: 350px;
+}
+
+.first p, .second p{
+    margin: 0;
+    text-align: justify;
+}
+
+.first h4{
+    margin-bottom: 13px;
+    color: green;
+} 
+.second h4{
+    margin-bottom: 13px;
+    color: #4ae;
+}
+
+.first, .second{
+    margin-bottom: 18px;
+}
+
+.first p, .second p{
+    font-size: 13px;
+}
+
+.card_details{
+    width: 350px;
+}
+
+.form_control{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form_control p{
+    text-align: center;
+    font-size: 14px;
+}
+
+input[type='text']{
+    width: 100%;
+}
+
+.form_control label{
+    font-size: 13px;
+}
+
+.submit{
+    background-color: #4ae;
+    border: none;
+    padding: 13px 15px;
+    width: 100%;
+    border-radius: 5px;
+    color: white;
+    font-weight: bolder;
+    margin: 10px auto;
+}
+
+.card_pin{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+#mastercard{
+    background-image: url('../../images/mastercard.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 70px 33px;
+}
+
+.card_save{
+    display: flex;
+    width: 37%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.card_save label{
+    font-size: 14px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .hero_content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px 0;
+    }
+
+    .donation{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        padding: 30px 0;
+    }
+
+    .questions{
+        padding: 0 15px;
+    }
+
+    .card_details{
+        max-width: 350px;
+        margin: auto;
+        padding: 0 15px;
+    }
+}

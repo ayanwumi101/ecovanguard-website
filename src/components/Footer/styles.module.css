@@ -19,7 +19,7 @@ footer{
 }
 
 .social{
-    max-width: 320px;
+    max-width: 325px;
     text-align: center;
     margin: auto;
     color: white;
@@ -27,6 +27,7 @@ footer{
 
 .social p{
     margin-left: 0;
+    font-size: 14px;
 }
 
 .icons{
@@ -37,5 +38,25 @@ footer{
 }
 
 .icons i{
-    font-size: 25px;
+    font-size: 23px;
+}
+  .box p{
+        font-size: 14px;
+    }
+
+@media screen and (max-width: 600px) {
+    .contents{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+        align-items: center;
+    }
+
+    .box{
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
 }

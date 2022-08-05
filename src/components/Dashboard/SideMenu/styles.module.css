@@ -1,0 +1,56 @@
+.sideMenu_container{
+    width: 14%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 18px 0;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+}
+
+.sideMenu_container ul{
+    list-style-type: none;
+    margin: 45px 0;
+}
+
+.sideMenu_container ul li{
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    color: #4ae;
+    gap: 10px;
+    font-size: 16px;
+    padding: 10px 18px;
+}
+
+.user{
+    padding: 5px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sideMenu_container ul li:hover{
+    background-color: #4ae;
+    color: white;
+    padding: 10px 18px;
+}
+
+.user_avatar{
+    width: 30px;
+    height: 30px;
+}
+
+.user_avatar img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 800px) {
+    .sideMenu_container{
+        display: none;
+    }
+}

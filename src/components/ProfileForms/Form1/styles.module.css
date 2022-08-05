@@ -1,0 +1,101 @@
+.first_form_container{
+    max-width: 95%;
+    margin: auto;
+    padding-bottom: 25px;
+}
+.upload{
+   border: 2px solid rgb(25, 115, 175);
+    width: 150px;
+    padding: 20px;
+    height: 150px;
+    border-radius: 18px;
+    background-color: rgba(199, 231, 241, 0.493);
+    display: inline-block;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.camera{
+    width: 30px;
+    height: 30px;
+    color: white;
+    
+}
+
+.camera_container{
+    background-color: rgb(30, 123, 185);
+    padding: 10px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_upload{
+    width: 100%;
+    text-align: center;
+    margin: 25px auto;
+}
+input[type=file]{
+    display: none
+     ;
+    
+}
+
+.form_control{
+    margin: 20px auto;
+}
+
+.heading{
+    margin: auto;
+    text-align: center;
+}
+
+.heading h2{
+    margin-bottom: 10px;
+}
+
+.uploads_container{
+    margin: 30px auto;
+}
+
+.form_container{
+    max-width: 400px;
+    margin: auto;
+}
+
+input[type=email]{
+    padding: 12px;
+    background-color: white;
+    width: 100%;
+    border: 1.95px solid black;
+    outline: none;
+    border-radius: 3px;
+}
+
+
+.submit_container{
+    width: 100%;
+    margin: 20px auto;
+    position: relative;
+    background-color: rgb(30, 123, 185);
+    padding: 13px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    border: none;
+    color: white;
+    font-weight: bold;
+    gap: 4px;
+    justify-content: center;
+}
+
+.arrow{
+    color: white;
+}

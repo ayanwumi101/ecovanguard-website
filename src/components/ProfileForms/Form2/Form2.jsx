@@ -1,16 +1,38 @@
 import React,{useState} from 'react'
 import styles from './styles.module.css'
 import { FaArrowRight } from 'react-icons/fa'
-// import Profile2 from '../Profile2/Profile2'
+import {ErrorAlert} from '../FormAlert/Alert'
 
 
+const Form2 = ({ setStep, showAlert, setShowAlert }) => {
+
+    const [person, setPerson] = useState({ institution: '', faculty: '', department: '', level: '', admissionYear: '', graduationYear: '' });
+    const [people, setPeople] = useState([]);
 
 
-const Form2 = () => {
-    const [nextPage, setNextPage] = useState(false);
+    const handleChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        setPerson({ ...person, [name]: value })
+    };
 
-    const handleClick = () => {
-        setNextPage(true)
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (person.admissionYear && person.department && person.institution && person.faculty && person.graduationYear && person.level) {
+
+            const newPerson = { ...person, id: new Date().getTime().toString() };
+            setPeople([...people, newPerson]);
+            setPerson({ institution: '', faculty: '', department: '', level: '', admissionYear: '', graduationYear: '' });
+            setStep(3);
+            setShowAlert(false);
+            
+        } else if (!person.admissionYear || !person.institution || !person.department || !person.faculty || !person.graduationYear || !person.level) {
+            setShowAlert(true);
+        } else {
+            setShowAlert(true);
+        }
+
     }
   return (
     <div className={styles.profile_container}>
@@ -20,10 +42,12 @@ const Form2 = () => {
         </div>
         
           <div className={styles.form_container}>
-              <form action="">
+              {!person.admissionYear && !person.department && !person.faculty && !person.graduationYear && !person.institution && !person.level && showAlert && <ErrorAlert showAlert={showAlert} setShowAlert={setShowAlert} />}
+
+              <form action="" method='POST' onSubmit={handleSubmit}>
                   <div className={styles.form_control}>
-                      <label htmlFor="Institution">Institution</label>
-                      <select name="Institution" id="">
+                      <label htmlFor="institution">Institution</label>
+                      <select name="institution" id="institution" value={person.institution} onChange={handleChange}>
                           <option value="default value">Select your institution</option>
                           <option value="University of Ibadan">University of Ibadan</option>
                           <option value="University of Ibadan">University of Ilorin</option>
@@ -32,23 +56,23 @@ const Form2 = () => {
                   </div>
 
                   <div className={styles.form_control}>
-                      <label htmlFor="Faculty">Faculty</label>
-                      <input type="text" placeholder='Input your Faculty' />
+                      <label htmlFor="faculty">Faculty</label>
+                      <input type="text" placeholder='Input your Faculty' id='faculty' name='faculty' onChange={handleChange} value={person.faculty} />
                   </div>
 
                   <div className={styles.form_control}>
                       <label htmlFor="Department">Department</label>
-                      <input type="text" placeholder='Input your Department' />
+                      <input type="text" placeholder='Input your Department' name='department' onChange={handleChange} value={person.department} />
                   </div>
 
                   <div className={styles.form_control}>
-                      <label htmlFor="Level">Level</label>
-                      <input type="text" placeholder='Input your Level' />
+                      <label htmlFor="level">Level</label>
+                      <input type="text" id='level' placeholder='Input your Level' name='level' onChange={handleChange} value={person.level} />
                   </div>
 
                   <div className={styles.form_control}>
-                      <label htmlFor="Admission year">Year of Admission</label>
-                      <select name="Admission year" id="">
+                      <label htmlFor="admission-year">Year of Admission</label>
+                      <select id="admission-year" name='admissionYear' onChange={handleChange} value={person.admissionYear}>
                           <option value="default value">Select year of admission</option>
                           <option value="2015">2015</option>
                           <option value="2016">2016</option>
@@ -62,8 +86,8 @@ const Form2 = () => {
                   </div>
 
                   <div className={styles.form_control}>
-                     <label htmlFor="Level">Expected year of graduation</label>
-                     <select name="graduation year" id="">
+                     <label htmlFor="graduation-year">Expected year of graduation</label>
+                     <select id="graduation-year" name='graduationYear' onChange={handleChange} value={person.graduationYear}>
                           <option value="default value">Select assumed graduation year</option>
                           <option value="2022">2022</option>
                           <option value="2023">2023</option>
@@ -77,15 +101,12 @@ const Form2 = () => {
                       </select>
                   </div>
 
-
-                  <div className="stepper"></div>
-
-                  <div className={styles.submit} onClick={handleClick}>
-                      <input type="submit" value='Proceed' />
-                      <FaArrowRight />
-                  </div>
+                  <button type='submit' className={styles.submit_container}>
+                      <span>Proceed</span>
+                      <FaArrowRight className={styles.arrow} />
+                  </button>
               </form>
-              {/* {nextPage && (<Profile2 />)} */}
+              {!person.admissionYear || !person.department || !person.faculty || !person.graduationYear || !person.institution || !person.level && showAlert && <ErrorAlert showAlert={showAlert} setShowAlert={setShowAlert} />}
         </div>
     </div>
   )

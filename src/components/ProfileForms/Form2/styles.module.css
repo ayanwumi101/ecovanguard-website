@@ -33,26 +33,28 @@ input[type=text], select{
     outline: none;
 }
 
-.submit{
+
+.submit_container{
     width: 100%;
     margin: 20px auto;
-    background-color: rgb(77, 77, 250);
-    border-radius: 6px;
-    border: none;
+    position: relative;
+    background-color: rgb(30, 123, 185);
+    padding: 13px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
-    color: white;
-    text-align: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 12px;
-}
-
-input[type=submit]{
-    background: transparent;
     border: none;
     color: white;
-    font-weight: bolder;
+    font-weight: bold;
+    gap: 4px;
+    justify-content: center;
 }
+
+.arrow{
+    color: white;
+}
+
+
+
 
 
