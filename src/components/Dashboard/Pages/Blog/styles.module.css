@@ -12,8 +12,8 @@ button{
 }
 
 .logo_container{
-    max-width: 200px;
-    margin-bottom: 15px;
+    max-width: 180px;
+    margin-bottom: 30px;
 }
 
 .logo_container img{
@@ -113,6 +113,7 @@ button{
         right: 0;
         max-width: 100%;
         margin: 30px auto;
+        padding: 0 18px;
     }
     .cards_container{
         max-width: 600px;
