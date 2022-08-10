@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.css'
 import { FaImages, FaBlogger, FaUserFriends, FaDatabase, FaHome, FaChartBar, FaBars, FaCalendarAlt, FaUsers, FaSearchLocation, FaTimes } from 'react-icons/fa'
 import avatar from '../../../images/boy.png'
@@ -10,71 +10,69 @@ const SideMenu = () => {
   const [showSideBar, setShowSideBar] = useState(false);
 
   return (
-    <>
+    <div>
+        {showSideBar ? <SideBar setShowSideBar={setShowSideBar} /> : null }
+
+              <FaBars className={styles.bar_icon} onClick={() => setShowSideBar(true)} />
+
         <div className={styles.sideMenu_container}>
+
             <div className={styles.user}>
                 <div className={styles.user_avatar}>
                   <img src={avatar} alt="user avatar" />
                 </div>
-
                 <span>Salami</span>
             </div>
 
-          <ul>
-                  <li>
+            <ul>
+                <li>
                     <FaHome />
                     <span>Home</span>
-                  </li>
+                </li>
 
-                  <li>
+                <li>
                     <FaDatabase />
                     <span>Data</span>
-                  </li>
-                  
-                  <li>
+                </li>
+                    
+                <li>
                     <FaChartBar />
                     <span>Projects</span>
-                  </li>
-                  
-                  <Link to='/'><li>
+                </li>
+                    
+                <Link to='/'><li>
                     <FaBlogger />
                     <span>Blog</span>
-                  </li>
-                  </Link>
-                  
-                  <Link to='/gallery'><li>
+                </li></Link>
+                    
+                <Link to='/gallery'><li>
                     <FaImages />
                     <span>Gallery</span>
-                  </li></Link>
-                  
-                  <li>
+                </li></Link>
+                    
+                <li>
                     <FaUserFriends />
                     <span>Executives</span>
-                  </li>
+                </li>
 
-                  <li>
+                <li>
                     <FaCalendarAlt />
                     <span>Events</span>
-                  </li>
-                  
-                  <li>
+                </li>
+                    
+                <li>
                     <FaUsers />
                     <span>Partners</span>
-                  </li>
+                </li>
 
-                  <li>
+                <li>
                     <FaSearchLocation />
                     <span>Location</span>
-                  </li>
-                  
-          </ul> 
+                </li>
+                    
+            </ul> 
         </div> 
-
-      <div className={styles.bars}>
-          <button onClick={() => setShowSideBar(true)}><FaBars className={styles.bar_icon} /></button>
-      </div>
-      {showSideBar ? <SideBar setShowSideBar={setShowSideBar} /> : null }
-    </>
+    </div>
   )
 }
 
@@ -90,8 +88,8 @@ export const SideBar = ({setShowSideBar}) => {
     <>
       <div className={styles.modal}>
         <div className={styles.sidebar_container}>
-          <button onClick={() => setShowSideBar(false)}><FaTimes /></button>
-        {/* <div className={styles.testing}> */}
+        <button className={styles.close_button} onClick={() => setShowSideBar(false)}><FaTimes /></button>
+        <div className={styles.testing}>
 
             <div className={styles.user}>
                 <div className={styles.user_avatar}>
@@ -101,55 +99,55 @@ export const SideBar = ({setShowSideBar}) => {
                 <span>Salami</span>
             </div>
 
-          <ul>
-                  <li>
-                    <FaHome />
-                    <span>Home</span>
-                  </li>
+            <ul onClick={() => setShowSideBar(false)}>
+                    <li>
+                      <FaHome />
+                      <span>Home</span>
+                    </li>
 
-                  <li>
-                    <FaDatabase />
-                    <span>Data</span>
-                  </li>
-                  
-                  <li>
-                    <FaChartBar />
-                    <span>Projects</span>
-                  </li>
-                  
-                  <Link to='/'><li>
-                    <FaBlogger />
-                    <span>Blog</span>
-                  </li>
-                  </Link>
-                  
-                  <Link to='/gallery'><li>
-                    <FaImages />
-                    <span>Gallery</span>
-                  </li></Link>
-                  
-                  <li>
-                    <FaUserFriends />
-                    <span>Executives</span>
-                  </li>
+                    <li>
+                      <FaDatabase />
+                      <span>Data</span>
+                    </li>
+                    
+                    <li>
+                      <FaChartBar />
+                      <span>Projects</span>
+                    </li>
+                    
+                    <Link to='/'><li>
+                      <FaBlogger />
+                      <span>Blog</span>
+                    </li>
+                    </Link>
+                    
+                    <Link to='/gallery'><li>
+                      <FaImages />
+                      <span>Gallery</span>
+                    </li></Link>
+                    
+                    <li>
+                      <FaUserFriends />
+                      <span>Executives</span>
+                    </li>
 
-                  <li>
-                    <FaCalendarAlt />
-                    <span>Events</span>
-                  </li>
-                  
-                  <li>
-                    <FaUsers />
-                    <span>Partners</span>
-                  </li>
+                    <li>
+                      <FaCalendarAlt />
+                      <span>Events</span>
+                    </li>
+                    
+                    <li>
+                      <FaUsers />
+                      <span>Partners</span>
+                    </li>
 
-                  <li>
-                    <FaSearchLocation />
-                    <span>Location</span>
-                  </li>
-                  
-          </ul> 
-        {/* </div>  */}
+                    <li>
+                      <FaSearchLocation />
+                      <span>Location</span>
+                    </li>
+                    
+            </ul> 
+        </div> 
 
         </div>
       </div>

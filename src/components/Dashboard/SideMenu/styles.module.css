@@ -53,15 +53,10 @@ a{
     border-radius: 50%;
 }
 
-.bars{
-    display: none;
-    position: absolute;
-    top: 35px;
-    right: 10px;
-}
 
 .bar_icon{
     font-size: 22px;
+    display: none;
 }
 
 .modal{
@@ -75,25 +70,63 @@ a{
     position: fixed;
     overflow-x: hidden;
     transition: 1.5s;
-    /* display: none; */
+    
 }
 
 .sidebar_container{
-    width: 250px;
-    height: 100%;
+    width: auto;
     background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px 0;
+    height: 100%;
+    position: fixed;
     z-index: 2;
+    top: 0;
+    left: 0;
     overflow-x: hidden;
-    transition: 1.5s;
 }
+
+.sidebar_container ul li{
+    display: flex;
+    align-items: center;
+    margin: 13px 0;
+    color: #4ae;
+    gap: 10px;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.sidebar_container ul li:hover{
+    background-color: #4ae;
+    color: white;
+    padding: 10px 18px;
+}
+
+.close_button{
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    font-size: 19px;
+}
+
+.testing{
+    margin-top: 28px;
+}
+
 
 
 @media screen and (max-width: 900px) {
     .sideMenu_container{
         display: none;
+        z-index: 2;
+        position: absolute;
     }
 
-    .bars{
+    .bar_icon{
         display: block;
+        position: absolute;
+    top: 35px;
+    right: 10px;
+    z-index: 2;
     }
 }
