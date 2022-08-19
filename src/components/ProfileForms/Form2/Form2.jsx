@@ -46,8 +46,7 @@ const Form2 = ({ setStep, showAlert, setShowAlert }) => {
                       <select name="institution" id="institution" value={formik.values.institution} onChange={formik.handleChange}>
                           <option value="default value">Select your institution</option>
                           <option value="University of Ibadan">University of Ibadan</option>
-                          <option value="University of Ibadan">University of Ilorin</option>
-                          <option value="University of Ibadan">Obafemi Awolowo University</option>
+                          <option value="University of Ibadan">Lead City University</option>
                       </select>
                       {formik.errors.institution ? <div className={styles.error_text}>{formik.errors.institution}</div> : null}
                   </div>

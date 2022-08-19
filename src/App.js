@@ -7,7 +7,8 @@ import Navbar from './components/Navbar/Navbar'
 import FormContainer from './components/ProfileForms/FormContainer'
 import Projects from './components/Projects/Projects'
 import styles from './styles.module.css'
-
+// import Index from '../src/components/Dashboard/Index'
+import Posts from './components/Posts/Posts'
 
 
 const App = () =>  {
@@ -19,7 +20,7 @@ const App = () =>  {
       <Routes>
         {/* <Route exact path='/' element={<Blog />} /> */}
         <Route exact path='/donate' element={<Donate />} />
-        <Route exact path='/blog' element={<Blog />} />
+        <Route exact path='/blog' element={<Posts />} />
         <Route exact path='/projects' element={<Projects />} />
         <Route exact path='/create_account' element={<FormContainer />} />
       </Routes>

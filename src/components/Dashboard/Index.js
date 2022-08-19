@@ -7,7 +7,7 @@ import styles from './styles.module.css'
 
 
 
-const App = () => {
+const Index = () => {
   return (
     <div>
       <Router>
@@ -21,4 +21,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Index

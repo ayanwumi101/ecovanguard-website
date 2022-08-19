@@ -1,0 +1,12 @@
+.column2{
+    width: 310px;
+}
+
+.post_image{
+    max-width: 80px;
+    height: 80px;
+}
+
+.post_image img{
+    width: 100%;
+}
