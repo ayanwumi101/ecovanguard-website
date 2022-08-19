@@ -1,39 +1,36 @@
 import React,{useState} from 'react'
 import styles from './styles.module.css'
 import { FaArrowRight } from 'react-icons/fa'
-import {ErrorAlert} from '../FormAlert/Alert'
+import {useFormik} from 'formik'
+import * as yup from 'yup'
 
 
 const Form2 = ({ setStep, showAlert, setShowAlert }) => {
 
-    const [person, setPerson] = useState({ institution: '', faculty: '', department: '', level: '', admissionYear: '', graduationYear: '' });
-    const [people, setPeople] = useState([]);
+    const formik = useFormik({
+        initialValues: {
+            institution: '',
+            faculty: '',
+            department: '',
+            level: '',
+            admission: '',
+            graduation: '',
+        },
 
+        validationSchema: yup.object({
+            institution: yup.string().required('Please select an institution'),
+            faculty: yup.string().required('Please input your faculty'),
+            department: yup.string().required('Please input your department'),
+            level: yup.number().required('Please input your current level of study').min(100, 'Your level cannot be less than 100'),
+            admission: yup.string().required('Please select your admission year'),
+            graduation: yup.string().required('please select your graduation year'),
+        }),
 
-    const handleChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setPerson({ ...person, [name]: value })
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        if (person.admissionYear && person.department && person.institution && person.faculty && person.graduationYear && person.level) {
-
-            const newPerson = { ...person, id: new Date().getTime().toString() };
-            setPeople([...people, newPerson]);
-            setPerson({ institution: '', faculty: '', department: '', level: '', admissionYear: '', graduationYear: '' });
+        onSubmit: values => {
             setStep(3);
-            setShowAlert(false);
-            
-        } else if (!person.admissionYear || !person.institution || !person.department || !person.faculty || !person.graduationYear || !person.level) {
-            setShowAlert(true);
-        } else {
-            setShowAlert(true);
-        }
-
-    }
+            // alert(JSON.stringify(values, null, 2));
+        },
+    });
   return (
     <div className={styles.profile_container}>
         <div className={styles.heading}>
@@ -42,37 +39,40 @@ const Form2 = ({ setStep, showAlert, setShowAlert }) => {
         </div>
         
           <div className={styles.form_container}>
-              {!person.admissionYear && !person.department && !person.faculty && !person.graduationYear && !person.institution && !person.level && showAlert && <ErrorAlert showAlert={showAlert} setShowAlert={setShowAlert} />}
-
-              <form action="" method='POST' onSubmit={handleSubmit}>
+              
+              <form action="" method='POST' onSubmit={formik.handleSubmit}>
                   <div className={styles.form_control}>
                       <label htmlFor="institution">Institution</label>
-                      <select name="institution" id="institution" value={person.institution} onChange={handleChange}>
+                      <select name="institution" id="institution" value={formik.values.institution} onChange={formik.handleChange}>
                           <option value="default value">Select your institution</option>
                           <option value="University of Ibadan">University of Ibadan</option>
                           <option value="University of Ibadan">University of Ilorin</option>
                           <option value="University of Ibadan">Obafemi Awolowo University</option>
                       </select>
+                      {formik.errors.institution ? <div className={styles.error_text}>{formik.errors.institution}</div> : null}
                   </div>
 
                   <div className={styles.form_control}>
                       <label htmlFor="faculty">Faculty</label>
-                      <input type="text" placeholder='Input your Faculty' id='faculty' name='faculty' onChange={handleChange} value={person.faculty} />
+                      <input type="text" placeholder='Input your Faculty' id='faculty' name='faculty' onChange={formik.handleChange} value={formik.values.faculty} />
+                      {formik.errors.faculty ? <div className={styles.error_text}>{formik.errors.faculty}</div> : null}
                   </div>
 
                   <div className={styles.form_control}>
                       <label htmlFor="Department">Department</label>
-                      <input type="text" placeholder='Input your Department' name='department' onChange={handleChange} value={person.department} />
+                      <input type="text" placeholder='Input your Department' name='department' onChange={formik.handleChange} value={formik.values.department} />
+                      {formik.errors.department ? <div className={styles.error_text}>{formik.errors.department}</div> : null}
                   </div>
 
                   <div className={styles.form_control}>
                       <label htmlFor="level">Level</label>
-                      <input type="text" id='level' placeholder='Input your Level' name='level' onChange={handleChange} value={person.level} />
+                      <input type="text" id='level' placeholder='Input your Level' name='level' onChange={formik.handleChange} value={formik.values.level} />
+                      {formik.errors.level ? <div className={styles.error_text}>{formik.errors.level}</div> : null}
                   </div>
 
                   <div className={styles.form_control}>
-                      <label htmlFor="admission-year">Year of Admission</label>
-                      <select id="admission-year" name='admissionYear' onChange={handleChange} value={person.admissionYear}>
+                      <label htmlFor="admission">Year of Admission</label>
+                      <select id="admission" name='admission' onChange={formik.handleChange} value={formik.values.admission}>
                           <option value="default value">Select year of admission</option>
                           <option value="2015">2015</option>
                           <option value="2016">2016</option>
@@ -83,11 +83,12 @@ const Form2 = ({ setStep, showAlert, setShowAlert }) => {
                           <option value="2021">2021</option>
                           <option value="2022">2022</option>
                       </select>
+                      {formik.errors.admission ? <div className={styles.error_text}>{formik.errors.admission}</div> : null}
                   </div>
 
                   <div className={styles.form_control}>
-                     <label htmlFor="graduation-year">Expected year of graduation</label>
-                     <select id="graduation-year" name='graduationYear' onChange={handleChange} value={person.graduationYear}>
+                     <label htmlFor="graduation">Expected year of graduation</label>
+                     <select id="graduation" name='graduation' onChange={formik.handleChange} value={formik.values.graduation}>
                           <option value="default value">Select assumed graduation year</option>
                           <option value="2022">2022</option>
                           <option value="2023">2023</option>
@@ -99,6 +100,7 @@ const Form2 = ({ setStep, showAlert, setShowAlert }) => {
                           <option value="2029">2029</option>
                           <option value="2030">2030</option>
                       </select>
+                      {formik.errors.graduation ? <div className={styles.error_text}>{formik.errors.graduation}</div> : null}
                   </div>
 
                   <button type='submit' className={styles.submit_container}>
@@ -106,7 +108,7 @@ const Form2 = ({ setStep, showAlert, setShowAlert }) => {
                       <FaArrowRight className={styles.arrow} />
                   </button>
               </form>
-              {!person.admissionYear || !person.department || !person.faculty || !person.graduationYear || !person.institution || !person.level && showAlert && <ErrorAlert showAlert={showAlert} setShowAlert={setShowAlert} />}
+            
         </div>
     </div>
   )

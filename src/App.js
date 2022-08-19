@@ -6,11 +6,6 @@ import Donate from './components/Donate/Donate'
 import Navbar from './components/Navbar/Navbar'
 import FormContainer from './components/ProfileForms/FormContainer'
 import Projects from './components/Projects/Projects'
-
-
-
-
-
 import styles from './styles.module.css'
 
 
@@ -19,14 +14,14 @@ const App = () =>  {
   return (
     <div className={styles.app}>
       <Router>
-        {/* <Navbar /> */}
-        <SideMenu />
+        <Navbar />
+        {/* <SideMenu /> */}
       <Routes>
-        <Route exact path='/' element={<Blog />} />
-        {/* <Route exact path='/donate' element={<Donate />} />
+        {/* <Route exact path='/' element={<Blog />} /> */}
+        <Route exact path='/donate' element={<Donate />} />
         <Route exact path='/blog' element={<Blog />} />
         <Route exact path='/projects' element={<Projects />} />
-        <Route exact path='/create_account' element={<FormContainer />} /> */}
+        <Route exact path='/create_account' element={<FormContainer />} />
       </Routes>
       </Router>
     </div>
