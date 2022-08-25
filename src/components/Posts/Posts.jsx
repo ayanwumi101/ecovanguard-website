@@ -16,7 +16,7 @@ const Posts = () => {
             title,
             slug,
             body,
-            date,
+            publishedAt,
             mainImage{
                 asset -> {
                     _id,
@@ -25,6 +25,7 @@ const Posts = () => {
                 alt
             },
             "authorName": author -> name,
+            "authorImage": author -> image,
         }`
     ).then((data) => setPost(data)).catch((console.error));
   }, [])
@@ -43,7 +44,7 @@ const Posts = () => {
             
             
             <div className={styles.related}>
-                <div className="heading">
+                <div className={styles.heading}>
                   <h3>Related News</h3>
                   <div className={styles.line}></div>
                 </div>

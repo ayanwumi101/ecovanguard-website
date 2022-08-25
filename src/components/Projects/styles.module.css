@@ -100,10 +100,13 @@
 }
 
 .cards_container{
-    
     background-color: white;
-    padding: 20px 30px;
+    padding: 25px 50px;
     overflow-x: auto;
+}
+
+.cards_container h4{
+    margin-bottom: 30px;
 }
 
 .cards{
@@ -145,9 +148,12 @@
 .completed_projects{
     max-width: 90%;
     margin: auto;
-    /* padding: 20px; */
+    padding: 25px 0;
 }
 
+.completed_projects h4{
+    margin-bottom: 18px;
+}
 .completed{
     display: flex;
     justify-content: space-between;

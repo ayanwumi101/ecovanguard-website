@@ -10,12 +10,11 @@ const FormContainer = () => {
 
   return (
       <div>
-          {step === 1 && <Form1 setStep={setStep} showAlert={showAlert} setShowAlert={setShowAlert}  />}
+          {step === 1 && <Form1 setStep={setStep} step={step}  />}
 
-          {step === 2 && <Form2 setStep={setStep} showAlert={showAlert} setShowAlert={setShowAlert} />}
+          {step === 2 && <Form2 setStep={setStep} step={step} />}
 
-          {step === 3 && <Form3 setStep={setStep} showAlert={showAlert} setShowAlert={setShowAlert} />}
-          {step === 4 && <Profile setStep={setStep} showAlert={showAlert} setShowAlert={setShowAlert} />}
+          {step === 3 && <Profile setStep={setStep} step={step} />}
       </div>
   )
 }

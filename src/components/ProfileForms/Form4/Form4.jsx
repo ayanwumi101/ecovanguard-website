@@ -6,7 +6,7 @@ import * as yup from 'yup'
 import axios from 'axios'
 
 
-const Form1 = ({setStep,showAlert, setShowAlert}) => {
+const Form4 = ({setStep,showAlert, setShowAlert}) => {
 
     const towns = [
         'Aba',
@@ -215,4 +215,4 @@ const Form1 = ({setStep,showAlert, setShowAlert}) => {
   )
 }
 
-export default Form1
+export default Form4

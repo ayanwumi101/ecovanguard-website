@@ -1,12 +1,15 @@
 import React,{useState} from 'react'
 import styles from './styles.module.css'
-import { FaArrowRight } from 'react-icons/fa'
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 import {useFormik} from 'formik'
 import * as yup from 'yup'
 
 
-const Form2 = ({ setStep, showAlert, setShowAlert }) => {
+const Form2 = ({ setStep, step }) => {
 
+    const handleStep = () => {
+        setStep(step - 1);
+    }
     const formik = useFormik({
         initialValues: {
             institution: '',
@@ -102,10 +105,10 @@ const Form2 = ({ setStep, showAlert, setShowAlert }) => {
                       {formik.errors.graduation ? <div className={styles.error_text}>{formik.errors.graduation}</div> : null}
                   </div>
 
-                  <button type='submit' className={styles.submit_container}>
-                      <span>Proceed</span>
-                      <FaArrowRight className={styles.arrow} />
-                  </button>
+                  <div className={styles.submit_container}>
+                        <button onClick={handleStep}><FaArrowLeft/> Go Back</button>
+                        <button type='submit'>Submit <FaArrowRight /></button>
+                  </div>
               </form>
             
         </div>

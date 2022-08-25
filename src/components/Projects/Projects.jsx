@@ -23,11 +23,15 @@ const Projects = () => {
       const currentImg = index - 1;
       const prevImg = prevIndex - 1;
       const nextImg = nextIndex - 1;
+
+    //   setIndex((index -1) % images.length);
+    //   setPrevIndex((prevIndex -1) % images.length);
+    //   setNextIndex((nextIndex -1) % images.length);
       
       if(currentImg < 0 && nextImg < 2 ){
-          setIndex(images.length - 1);
-        //   setPrevIndex(images.length - 1);
-          setNextIndex(images.length - 1);
+          setIndex((currentImg) % images.length);
+          setPrevIndex((prevImg) % images.length);
+          setNextIndex((nextImage) % images.length);
       }else{
           setIndex(currentImg);
           setPrevIndex(prevImg);

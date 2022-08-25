@@ -44,7 +44,7 @@ const SinglePost = () => {
             </div>
             <BlockContent blocks={singlePost.body} projectId='vyd7qavh' dataset='production' className={styles.content}/>
 
-            <Link to='/posts'><button className={styles.back_button}>
+            <Link to='/blog'><button className={styles.back_button}>
                 <FaArrowLeft/>
                 <span>Back</span>
             </button></Link>

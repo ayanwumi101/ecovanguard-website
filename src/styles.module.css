@@ -14,7 +14,7 @@ body{
     /* background-image: url('./images/background_image.svg'); */
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgba(132, 250, 132, 0.4);
+    background-color: white;
 }
 
 .app{

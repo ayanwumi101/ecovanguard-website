@@ -1,38 +1,39 @@
 import React, {useState} from 'react'
 import styles from './styles.module.css'
 import Alert,{ErrorAlert} from '../FormAlert/Alert'
+import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
+import {useFormik} from 'formik'
+import * as yup from 'yup'
 
 
-const Form3 = ({setStep, showAlert, setShowAlert}) => {
+const Form3 = ({setStep, step}) => {
 
-    const [person, setPerson] = useState({ position: '' , location: '', publicity: '', editorial: '', finance: '', visit: '', media: '', web: '', support: '', participation: ''});
-    const [people, setPeople] = useState([]);
-
-
-
-    const handleChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setPerson({...person, [name]: value})
+    const handleStep = () => {
+        setStep(step - 1);
     }
 
+    const formik = useFormik({
+        initialValues: {
+            school_name: '',
+            school_location: '',
+            class: '',
+            admission_year: '',
+            graduation_year: '',
+        }, 
+        validationSchema: yup.object({
+            school_name: yup.string().required('Please select your school'),
+            school_location: yup.string().required('Please select your school address'),
+            class: yup.string().required('Please select your class'),
+            admission_year: yup.string().required('Please select your admission year'),
+            graduation_year: yup.string().required('Please select your graduation year'),
+        }),
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        if (person.position && person.location && person.editorial && person.finance && person.media && person.publicity && person.web && person.visit && person.support && person.participation) {
-        const newPerson = { ...person, id: new Date().getTime().toString() };
-            setPeople([...people, newPerson]);
-            setPerson({ position: '', location: '', publicity: '', editorial: '', finance: '', visit: '', media: '', web: '', support: '', participation: '' });
-            setShowAlert(true);
-            setStep(4);
-        } else {
-            setShowAlert(true);
+        onSubmit: values => {
+            // alert(JSON.stringify(values, null, 2));
+            setStep(3);
         }
-
-    }
-    
-
+    })
+   
   return (
     <div className={styles.details_container}>
         <div className={styles.heading}>
@@ -41,84 +42,81 @@ const Form3 = ({setStep, showAlert, setShowAlert}) => {
         </div>
         
           <div className={styles.form_container}>
-              {!person.position && !person.location && !person.editorial && !person.finance && !person.media && !person.publicity && !person.web && !person.visit && !person.support && !person.participation && showAlert && <ErrorAlert setShowAlert={setShowAlert} />}
-
-              {/* {person.position && person.location && person.editorial && person.finance && person.media && person.publicity && person.web && person.visit && person.support && person.participation && showAlert && <Alert setShowAlert={setShowAlert} />} */}
-
-              <form action="" onSubmit={handleSubmit}>
+              
+              <form action="" onSubmit={formik.handleSubmit}>
                   <div className={styles.form_control}>
-                      <label htmlFor="position">Position</label>
-                      <select id="position" name='position' onChange={handleChange}>
-                          <option value="select your position">Select your position in club</option>
-                          <option value="leader">Leader</option>
-                          <option value="president">President</option>
-                          <option value="treasurer">Treasurer</option>
-                          <option value="secretary">Secretary</option>
-                          <option value="P.R.O">P.R.O</option>
+                      <label htmlFor="school_name">School Name</label>
+                      <select name="school_name" id="school_name" onChange={formik.handleChange} value={formik.values.school_name}>
+                          <option value="select your class">Select your school</option>
+                          <option value="Polythecnic High School">Polythecnic High School</option>
+                          <option value="Al Qalam Schools">Al Qalam Schools</option>
+                          <option value="As-Sabaq College">As-Sabaq College</option>
                       </select>
+                      {formik.errors.school_name ? <div className={styles.error_text}>{formik.errors.school_name}</div> : null}
                   </div>
 
                   <div className={styles.form_control}>
-                      <label htmlFor="location">Branch</label>
-                      <select name="location" id="location" onChange={handleChange}>
-                          <option value="select your position">Select the location of your branch</option>
-                          <option value="leader">UI branch</option>
-                          <option value="president">OAU branch</option>
-                          <option value="treasurer">FUTA branch</option>
-                          <option value="secretary">UNILAG branch</option>
-                          <option value="P.R.O">LASU branch</option>
+                      <label htmlFor="school_location">School's Location</label>
+                      <select name="school_location" id="school_location" value={formik.values.school_location} onChange={formik.handleChange}>
+                          <option value="select your position">Select the location of your school</option>
+                          <option value="No 7, Farayola layout, Bodija Ibadan.">No 7, Farayola layout, Bodija Ibadan.</option>
+                          <option value="The polythecnic high school, Ijokodo, Ibadan">The polythecnic high school, Ijokodo, Ibadan.</option>
+                          <option value="Olounde estate, Eleyele/Eruwa road, Ologuneru Ibadan">Olounde estate, Eleyele/Eruwa road, Ologuneru Ibadan.</option>
                       </select>
+                      {formik.errors.school_location ? <div className={styles.error_text}>{formik.errors.school_location}</div> : null}
                   </div>
 
 
                   <div className={styles.form_control}>
-                        <label htmlFor="teams">Teams and Committee</label>
-                      <div className={styles.teams_container}>
-                          <p>Select all the teams you are a member of within the club</p>
-                            <div className={styles.check}>
-                                <label htmlFor='publicity'>Publicity team</label>
-                                <input type="checkbox" value='Publicity team' name='publicity' id='publicity' onChange={handleChange} />
-                            </div>
-
-                            <div className={styles.check}>
-                                <label htmlFor='editorial'>Editorial committee</label>
-                                <input type="checkbox" value='Editorial team' id='editorial' name='editorial' onChange={handleChange} />
-                            </div>
-
-                            <div className={styles.check}>
-                                <label htmlFor='finance'>Financial committee</label>
-                                <input type="checkbox" value='Financial committee' id='finance' name='finance' onChange={handleChange} />
-                            </div>
-
-                            <div className={styles.check}>
-                                <label htmlFor='visit'>Visitation team</label>
-                                <input type="checkbox" value='Visitation team' id='visit' name='visit' onChange={handleChange} />
-                            </div>
-
-                            <div className={styles.check}>
-                                <label htmlFor='media'>Media team</label>
-                                <input type="checkbox" value='Media team' name='media' id='media' onChange={handleChange} />
-                            </div>
-                            <div className={styles.check}>
-                                <label htmlFor='web'>Web team</label>
-                                <input type="checkbox" value='Web team' name='web' id='web' onChange={handleChange} />
-                            </div>
-                            
-                            <div className={styles.check}>
-                                <label htmlFor='support'>Supporters team</label>
-                                <input type="checkbox" value='Supporters team' name='support' id='support' onChange={handleChange} />
-                            </div>
-                        </div>
+                        <label htmlFor="class">Class</label>
+                        <select name="class" id="class" onChange={formik.handleChange} value={formik.values.class}>
+                          <option value="select your class">Select your class</option>
+                          <option value="JSS1">JSS1</option>
+                          <option value="JSS2">JSS2</option>
+                          <option value="JSS3">JSS3</option>
+                          <option value="SS1">SS1</option>
+                          <option value="SS2">SS2</option>
+                          <option value="SS3">SS3</option>
+                        </select>
+                        {formik.errors.class ? <div className={styles.error_text}>{formik.errors.class}</div> : null}
                   </div>
 
                   <div className={styles.form_control}>
-                      <label htmlFor="participation">Participations</label>
-                      <textarea name="participation" id="" cols="30" rows="10" onChange={handleChange} placeholder='Type in your participations with the club'></textarea>
+                      <label htmlFor="admission_year">Year of Admission</label>
+                      <select name="admission_year" id="admission_year" onChange={formik.handleChange} value={formik.values.admission_year}>
+                          <option value="select your position">Select your admission year</option>
+                          <option value="2015">2015</option>
+                          <option value="2016">2016</option>
+                          <option value="2017">2017</option>
+                          <option value="2018">2018</option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                          <option value="2022">2022</option>
+                          <option value="other">Other</option>
+                      </select>
+                      {formik.errors.admission_year ? <div className={styles.error_text}>{formik.errors.admission_year}</div> : null}
                   </div>
 
-                  <button type='submit' className={styles.submit_container}>
-                     Submit
-                  </button>
+                  <div className={styles.form_control}>
+                      <label htmlFor="graduation_year">Expected Year of Graduation</label>
+                      <select name="graduation_year" id="graduation_year" onChange={formik.handleChange} value={formik.values.graduation_year}>
+                          <option value="select your position">Select your expected graduation year</option>
+                          <option value="20">2022</option>
+                          <option value="2016">2023</option>
+                          <option value="2017">2024</option>
+                          <option value="2018">2025</option>
+                          <option value="2019">2026</option>
+                          <option value="2020">2027</option>
+                          <option value="Other">Other</option> 
+                      </select>
+                      {formik.errors.graduation_year ? <div className={styles.error_text}>{formik.errors.graduation_year}</div> : null}
+                  </div>
+
+                  <div className={styles.submit_container}>
+                        <button onClick={handleStep}><FaArrowLeft/> Go Back</button>
+                        <button type='submit'>Submit <FaArrowRight /></button>
+                  </div>
               </form>
           </div>
     </div>

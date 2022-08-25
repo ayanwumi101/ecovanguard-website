@@ -36,18 +36,16 @@ input[type=text], select{
 
 .submit_container{
     width: 100%;
-    margin: 20px auto;
-    position: relative;
-    background-color: rgb(30, 123, 185);
-    padding: 13px;
-    border-radius: 5px;
     display: flex;
     align-items: center;
-    border: none;
+    justify-content: space-between;
+}
+
+.submit_container button{
+    background-color: #4ae;
+    padding: 10px 15px;
     color: white;
-    font-weight: bold;
-    gap: 4px;
-    justify-content: center;
+    border-radius: 6px;
 }
 
 .arrow{

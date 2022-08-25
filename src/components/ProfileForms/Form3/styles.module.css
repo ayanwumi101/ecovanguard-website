@@ -33,19 +33,11 @@ input[type=text], select, textarea{
     outline: none;
 }
 
-.submit{
-    width: 100%;
-    margin: 20px auto;
-    background-color: rgb(77, 77, 250);
-    border-radius: 6px;
-    border: none;
-    display: flex;
-    align-items: center;
+.submit_container button{
+    background-color: #4ae;
+    padding: 10px 15px;
     color: white;
-    text-align: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 12px;
+    border-radius: 6px;
 }
 
 .submit_btn{
@@ -58,6 +50,11 @@ input[type=text], select, textarea{
     padding: 13px;
     border-radius: 5px;
     width: 100%;
+}
+
+.error_text{
+    color: tomato;
+    font-size: 14px;
 }
 
 textarea{
@@ -88,7 +85,7 @@ textarea{
     color: rgba(0, 0, 0, 0.3);
 }
 
-.submit_container{
+/* .submit_container{
     width: 100%;
     margin: 20px auto;
     position: relative;
@@ -102,6 +99,13 @@ textarea{
     font-weight: bold;
     gap: 4px;
     justify-content: center;
-}
+} */
 
+
+.submit_container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
