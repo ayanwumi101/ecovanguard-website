@@ -24,7 +24,10 @@
 .active_image{
     width: 330px;
     height: 430px;
-    z-index: 2;
+}
+
+.active_image img{
+    border-radius: 5px;
 }
 
 .prev_image, .next_image{
@@ -35,6 +38,7 @@
 
 .prev_image img, .next_image img{
     opacity: 0.5;
+    border-radius: 5px;
 }
 
 .carousel_image{
@@ -203,12 +207,12 @@
     .next_btn{
     position: absolute;
     right: 15px;
-    top: 45%;
+    top: 40%;
     }
 
 .prev_btn{
     position: absolute;
-    top: 45%;
+    top: 40%;
     left: 15px;
 }
 

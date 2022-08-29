@@ -6,7 +6,7 @@ import * as yup from 'yup'
 import axios from 'axios'
 
 
-const Form4 = ({setStep,showAlert, setShowAlert}) => {
+const Form4 = ({setStep}) => {
 
     const towns = [
         'Aba',

@@ -7,11 +7,13 @@ import image4 from '../../images/house.jpg'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import image from '../../images/project_image.svg'
 import Footer from '../Footer/Footer'
+import Fade from 'react-reveal/Fade'
+import Zoom from 'react-reveal/Zoom'
 
 
 const Projects = () => {
 
-    const images = [image1, image2, image3, image4];
+    const [images, setImages] = useState([image1, image2, image3, image4]);
     const cards = [1, 2, 3, 4];
     
     const [prevIndex, setPrevIndex] = useState(0)
@@ -20,23 +22,13 @@ const Projects = () => {
 
 
   const prevImage = () => {
-      const currentImg = index - 1;
-      const prevImg = prevIndex - 1;
-      const nextImg = nextIndex - 1;
-
-    //   setIndex((index -1) % images.length);
-    //   setPrevIndex((prevIndex -1) % images.length);
-    //   setNextIndex((nextIndex -1) % images.length);
-      
-      if(currentImg < 0 && nextImg < 2 ){
-          setIndex((currentImg) % images.length);
-          setPrevIndex((prevImg) % images.length);
-          setNextIndex((nextImage) % images.length);
-      }else{
-          setIndex(currentImg);
-          setPrevIndex(prevImg);
-          setNextIndex(nextImg);
-      }
+      setImages(prev => {
+        const last = prev[prev.length - 1];
+        const others = prev.slice(0, prev.length - 1);
+        return[last, ...others
+        
+        ]
+      })
   }
 
 
@@ -63,15 +55,21 @@ const Projects = () => {
                   </div>
                   
                   <div className={styles.carousel_container}>
+                    <Fade left>
                       <div className={styles.prev_image}>
                           <img src={images[prevIndex]} alt="Ecovanguard project image" className={styles.carousel_image} />
                       </div>
+                    </Fade>
+                    <Zoom>
                       <div className={styles.active_image}>
                           <img src={images[index]} alt="Ecovanguard project image" className={styles.carousel_image} />
                       </div>
+                    </Zoom>
+                    <Fade right>
                       <div className={styles.next_image}>
                           <img src={images[nextIndex]} alt="Ecovanguard project image" className={styles.carousel_image} />
                       </div>
+                    </Fade>
                   </div>
                   
                   <div className={styles.caption}>

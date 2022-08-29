@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styles from './styles.module.css'
 import editIcon from '../../../images/edit.svg'
 import avatar from '../../../images/boy.png'
 import Footer from '../../Footer/Footer'
-
+import { FormContext } from '../FormContainer'
 
 const Profile = () => {
+    const [formData, setFormData] = useContext(FormContext);
+    console.log(formData);
   return (
     <>
         <div className={styles.profile_container}>
@@ -81,38 +83,6 @@ const Profile = () => {
                             </div>
                         
                     </form>
-                </div>
-            </section>
-
-            
-            <section className={styles.other_details}>
-                    <h4>Details with Club</h4>
-                <div className="positions">
-                    <h5 className={styles.sub_heading}>Position</h5>
-                    <p>President</p>
-                </div>
-
-                <div className="positions">
-                    <h5 className={styles.sub_heading}>Branch</h5>
-                    <p>University of Ibadan</p>
-                </div>
-
-                <div className="positions">
-                    <h5 className={styles.sub_heading}>Teams and Committees involved</h5>
-                    <ul className={styles.teams}>
-                        <li>Press team</li>
-                        <li>Press team</li>
-                        <li>Press team</li>
-                    </ul>
-                </div>
-
-                <div className="positions">
-                    <h5 className={styles.sub_heading}>Participations</h5>
-                    <ul className={styles.participation}>
-                        <li>Press team</li>
-                        <li>Press team</li>
-                        <li>Press team</li>
-                    </ul>
                 </div>
             </section>
 

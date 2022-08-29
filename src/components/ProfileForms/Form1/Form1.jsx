@@ -4,10 +4,14 @@ import { FaCamera, FaArrowRight } from 'react-icons/fa';
 import {useFormik} from 'formik'
 import * as yup from 'yup'
 import axios from 'axios'
+import { useContext } from 'react';
+import { FormContext } from '../FormContainer';
 
 
-const Form1 = ({setStep,showAlert, setShowAlert}) => {
+const Form1 = ({setStep}) => {
 
+    const [formData, setFormData] = useContext(FormContext);
+    console.log(formData, setFormData);
     const towns = [
         'Aba',
         'Arochukwu',
@@ -149,8 +153,9 @@ const Form1 = ({setStep,showAlert, setShowAlert}) => {
         }),
 
         onSubmit: values => {
-            // alert(JSON.stringify(values, null, 2));
             setStep(2);
+            setFormData(values);
+            console.log(formData);
         },
     });
      

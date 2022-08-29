@@ -1,22 +1,10 @@
 import React, {useState} from 'react'
 import styles from './styles.module.css'
 import {AiOutlineUser, AiOutlineUsergroupAdd} from 'react-icons/ai'
-import FormContainer from './FormContainer'
 import { Link } from 'react-router-dom'
 
 
 const FormOption = () => {
-
-    // const [highSchool, setHighSchool] = useState(false);
-    // const [University, setUniversity] = useState(false);
-
-    // const highSchoolForm = () => {
-    //     setHighSchool(true);
-    // }
-
-    // const universityForm = () => {
-    //     setUniversity(true);
-    // }
 
   return (
     <>
