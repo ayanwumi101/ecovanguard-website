@@ -1,15 +1,22 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import styles from './styles.module.css'
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 import {useFormik} from 'formik'
 import * as yup from 'yup'
-import { FormContext } from '../FormContainer'
+import { useContext } from 'react'
+import { FormContext } from '../../../App'
 
 
 
 const Form2 = ({ setStep, step }) => {
 
-    const [formData, setFormData] = useState(FormContext);
+    const [formData, updateForm] = useContext(FormContext);
+    const [submit, setSubmit] = useState(false)
+    useEffect(() => {
+      if (formData.institution && submit) {
+        setStep(3);
+      }
+    }, [formData, submit])
 
     const handleStep = () => {
         setStep(step - 1);
@@ -35,10 +42,9 @@ const Form2 = ({ setStep, step }) => {
         }),
 
         onSubmit: values => {
-            setStep(3);
-            setFormData(prev => [...prev, values]);
-            console.log(values);
-            console.log(formData);
+            updateForm(values);
+            setSubmit(true)
+            
         },
     });
   return (

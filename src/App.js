@@ -9,12 +9,23 @@ import Posts from './components/Posts/Posts'
 import SinglePost from './components/SinglePost/SinglePost'
 import FormOption from './components/ProfileForms/FormOption'
 import FormContainer2 from './components/ProfileForms/FormContainer2'
-
+export const FormContext = React.createContext();
 
 const App = () =>  {
 
+   const [formData, setFormData] = useState({});
+
+    const updateForm = (newObject) => {
+      console.log("New Object ", newObject)
+      setFormData(prev => {
+        const q = {...prev, ...newObject}
+        return q
+      })
+    }
+
   return (
     <div className={styles.app}>
+      <FormContext.Provider value={[formData, updateForm]}>
       <Router>
         <Navbar />
         <Routes>
@@ -27,6 +38,7 @@ const App = () =>  {
           <Route exact path='/create_account/secondary_school' element={<FormContainer2 />}/>
         </Routes>
       </Router>
+      </FormContext.Provider>
     </div>
   );
 }

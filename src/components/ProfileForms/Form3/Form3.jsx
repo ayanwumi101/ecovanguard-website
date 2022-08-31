@@ -1,12 +1,23 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './styles.module.css'
 import Alert,{ErrorAlert} from '../FormAlert/Alert'
 import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 import {useFormik} from 'formik'
 import * as yup from 'yup'
+import { FormContext } from '../../../App'
+import { useContext } from 'react'
 
 
 const Form3 = ({setStep, step}) => {
+
+    const [formData, updateForm] = useContext(FormContext);
+    const [submit, setSubmit] = useState(false);
+
+    useEffect(() => {
+      if (formData.school_name && submit) {
+        setStep(3);
+      }
+    }, [formData, submit]);
 
     const handleStep = () => {
         setStep(step - 1);
@@ -29,10 +40,10 @@ const Form3 = ({setStep, step}) => {
         }),
 
         onSubmit: values => {
-            // alert(JSON.stringify(values, null, 2));
-            setStep(3);
-        }
-    })
+            updateForm(values);
+            setSubmit(true);
+        },
+    });
    
   return (
     <div className={styles.details_container}>

@@ -5,13 +5,13 @@ import {useFormik} from 'formik'
 import * as yup from 'yup'
 import axios from 'axios'
 import { useContext } from 'react';
-import { FormContext } from '../FormContainer';
+import { FormContext } from '../../../App';
 
 
 const Form1 = ({setStep}) => {
 
-    const [formData, setFormData] = useContext(FormContext);
-    console.log(formData, setFormData);
+    const [formData, updateForm] = useContext(FormContext);
+    // console.log(formData, setFormData);
     const towns = [
         'Aba',
         'Arochukwu',
@@ -135,13 +135,20 @@ const Form1 = ({setStep}) => {
         'Gusau',
         'Kaura Namoda'
     ]
+    const [submit, setSubmit] = useState(false)
+    useEffect(() => {
+      if (formData.firstName && submit) {
+        setStep(2);
+      }
+    }, [formData, submit])
+    
     const formik = useFormik({
         initialValues: {
             avatar: '',
-            firstName: '',
-            email: '',
-            age: '',
-            city: '',
+            firstName: formData.firstName ? formData.firstName : '',
+            email: formData.email ? formData.email : '',
+            age:  formData.age ? formData.age : '',
+            city: formData.city ? formData.city : '',
         },
 
         validationSchema: yup.object({
@@ -153,9 +160,8 @@ const Form1 = ({setStep}) => {
         }),
 
         onSubmit: values => {
-            setStep(2);
-            setFormData(values);
-            console.log(formData);
+            updateForm(values);
+            setSubmit(true);
         },
     });
      

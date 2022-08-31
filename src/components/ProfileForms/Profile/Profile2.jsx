@@ -1,11 +1,13 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import styles from './styles.module.css'
 import editIcon from '../../../images/edit.svg'
 import avatar from '../../../images/boy.png'
 import Footer from '../../Footer/Footer'
 import { FormContext } from '../../../App'
+import { useContext } from 'react'
 
-const Profile = () => {
+
+const Profile2 = () => {
     const [formData, updateForm] = useContext(FormContext);
     console.log("Profile", formData);
   return (
@@ -53,22 +55,17 @@ const Profile = () => {
                     <form action="">
                         
                             <div className={styles.form_control}>
-                                <label htmlFor="Faculty">Institution</label>
+                                <label htmlFor="school_name">School Name</label>
                                 <input type="text" value={formData.institution} disabled />
                             </div>
 
                             <div className={styles.form_control}>
-                                <label htmlFor="Department">Faculty</label>
+                                <label htmlFor="school location">School Location</label>
                                 <input type="text" value={formData.faculty} disabled />
-                            </div>
-
-                            <div className={styles.form_control}>
-                                <label htmlFor="Level">Department</label>
-                                <input type="text" value={formData.department} disabled />
                             </div>
                             
                             <div className={styles.form_control}>
-                                <label htmlFor="Faculty">Level</label>
+                                <label htmlFor="Faculty">Class</label>
                                 <input type="text" value={formData.level} disabled />
                             </div>
 
@@ -92,4 +89,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default Profile2

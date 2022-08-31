@@ -11,7 +11,10 @@ const FormOption = () => {
             <div className={styles.container}>
                 <div className="heading">
                     <h2>Become a Registered Ecovanguard Member</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At tenetur cum dicta aut tempore, necessitatibus incidunt illum, dolores enim cupiditate voluptate eos magnam molestiae nobis. Cupiditate autem vitae voluptates! Libero ullam unde veniam sit cupiditate facilis temporibus tempore illo quas!</p>
+                    <p>
+                        Are you interested in protecting the one thing you have in common with everyone? Are you ready to take a step ahead and be a part of the greener environment movement? Or you are intrigued by the beauty of nature? Why not seize the monment and take the environment to the next level?
+                    </p>
+                    <h4>Be a member today!</h4>
                 </div>
 
                 <h3>Register As</h3>
