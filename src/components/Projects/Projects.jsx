@@ -73,11 +73,11 @@ const Projects = () => {
                   </div>
                   
                   <div className={styles.caption}>
-                      <h4>The Bodija Market</h4>
+                      <h3>The Bodija Market</h3>
                   </div>
 
                   <div className={styles.caption_details}>
-                      <div className="description">
+                      <div className={styles.description}>
                           <p>Waste Management Awareness Campaign</p>
                           <p>24th May, 2022</p>
                       </div>

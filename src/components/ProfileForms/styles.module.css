@@ -41,3 +41,27 @@
 .option_icon{
     font-size: 50px;
 }
+
+@media screen and (max-width: 600px) {
+    .container{
+        padding: 0 12px;
+    }
+    .heading h2{
+        font-size: 18px;
+    }
+
+    .heading p{
+        font-size: 13px;
+        text-align: justify;
+        line-height: 20px;
+    }
+
+    .options{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .option{
+        margin-bottom: 15px;
+    }
+}

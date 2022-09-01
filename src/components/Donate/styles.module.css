@@ -91,6 +91,7 @@
 
 .first p, .second p{
     font-size: 13px;
+    margin-bottom: 12px;
 }
 
 .card_details{

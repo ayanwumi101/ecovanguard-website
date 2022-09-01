@@ -9,7 +9,7 @@ const FormOption = () => {
   return (
     <>
             <div className={styles.container}>
-                <div className="heading">
+                <div className={styles.heading}>
                     <h2>Become a Registered Ecovanguard Member</h2>
                     <p>
                         Are you interested in protecting the one thing you have in common with everyone? Are you ready to take a step ahead and be a part of the greener environment movement? Or you are intrigued by the beauty of nature? Why not seize the monment and take the environment to the next level?

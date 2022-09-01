@@ -22,7 +22,7 @@
 }
 
 .active_image{
-    width: 330px;
+    max-width: 350px;
     height: 430px;
 }
 
@@ -34,6 +34,14 @@
     width: 270px;
     height: 360px;
     position: relative;
+}
+
+.project_description p{
+    margin-bottom: 13px;
+}
+
+.caption_details .description p{
+    font-size: 12px;
 }
 
 .prev_image img, .next_image img{
@@ -200,20 +208,23 @@
 
 @media screen and (max-width: 600px) {
     .active_image{
-        width: 85%;
+        max-width: 100%;
+        height: 360px;
         margin: auto;
     }
 
     .next_btn{
     position: absolute;
-    right: 15px;
-    top: 40%;
+    right: 5px;
+    top: 35%;
+    z-index: 1;
     }
 
 .prev_btn{
     position: absolute;
-    top: 40%;
-    left: 15px;
+    top: 35%;
+    left: 5px;
+    z-index: 1;
 }
 
     .active_image img{
