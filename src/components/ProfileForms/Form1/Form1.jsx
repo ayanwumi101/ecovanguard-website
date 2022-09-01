@@ -184,7 +184,7 @@ const Form1 = ({setStep}) => {
 
                   <div className={styles.form_control}>
                       <label htmlFor="fullname">Full Name</label>
-                      <input type="text" placeholder='Input your first name' name='firstName' value={formik.values.firstName} onChange={formik.handleChange} className={formik.errors.firstName ? `${styles.error}` : `${styles.success}`} />
+                      <input type="text" placeholder='Input your full name' name='firstName' value={formik.values.firstName} onChange={formik.handleChange} className={formik.errors.firstName ? `${styles.error}` : `${styles.success}`} />
                       {formik.errors.firstName ? <div className={styles.error_text}>{formik.errors.firstName}</div> : null}
                   </div>
 

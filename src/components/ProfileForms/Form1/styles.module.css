@@ -117,4 +117,8 @@ input[type=email]{
     .heading h4{
         font-size: 15px;
     }
+
+    .first_form_container{
+        padding: 0 15px;
+    }
 }

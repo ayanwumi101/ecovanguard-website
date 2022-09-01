@@ -52,9 +52,9 @@ console.log(singlePost);
                 <h2>{singlePost.title}</h2>
                 <div className={styles.author_details}>
                     <img src={singlePost.imageUrl} alt={singlePost.authorName} className={styles.author_image} />
-                    <p className="author">By: {singlePost.authorName}</p>
+                    <p className={styles.author}>By: {singlePost.authorName}</p>
                 </div>
-                <p>Posted On: {new Date(singlePost.publishedAt).toDateString()}</p>
+                <p className={styles.posted}>Posted On: {new Date(singlePost.publishedAt).toDateString()}</p>
             </div>
             <BlockContent blocks={singlePost.body} projectId='vyd7qavh' dataset='production' className={styles.content}/>
 

@@ -46,6 +46,7 @@ input[type=text], select{
     padding: 10px 15px;
     color: white;
     border-radius: 6px;
+    border: none;
 }
 
 .arrow{
@@ -65,6 +66,12 @@ input[type=text], select{
     .heading h3 {
         font-size: 15px;
     }
+
+    .profile_container{
+        padding: 0 15px;
+    }
+
+    
 }
 
 

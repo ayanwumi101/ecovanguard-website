@@ -132,7 +132,8 @@ const integer2 = Number(long).toFixed(2);
                       <p>Minimum Temp: {main.temp_min}</p>
                       <p>Weather: {weather[0].description
                       }</p>
-                      <p>Wind Speed: {wind.speed} Degree: {wind.deg}</p>
+                      <p>Wind Speed: {wind.speed}</p>
+                      <p>Wind Direction: {wind.deg} Degrees</p>
                     </div>
                   </div>
             </div>}

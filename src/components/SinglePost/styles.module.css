@@ -17,6 +17,7 @@
 .content{
     text-align: justify;
     margin: 30px 0;
+    font-size: 14px;
 }
 
 .heading{
@@ -64,6 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5px;
     margin: 15px 0;
 }
 
@@ -73,16 +75,46 @@
 
 .heading p{
     font-weight: bold;
+} 
+
+.posted{
+    font-size: 13px;
 }
 
 .author_image{
     width: 40px;
     height: 40px;
+    border: 3px solid grey;
     border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 @media screen and (max-width: 600px) {
     .single_post_container{
-        padding: 0 18px;
+        width: 100%;
+    }
+
+    .single_image_container{
+        max-width: 100%;
+        height: 350px;
+    }
+
+    .singlePost_details{
+        padding:  0 15px;
+    }
+
+    .author{
+        font-size: 14px;
+    }
+
+    .hero_text{
+        width: 90%;
+    }
+    .hero_text h2{
+        font-size: 25px;
+    }
+
+    .heading h2{
+        font-size: 16px;
     }
 }
