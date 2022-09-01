@@ -108,3 +108,13 @@ input[type=email]{
     color: tomato;
     font-size: 13.5px;
 }
+
+@media screen and (max-width: 600px) {
+    .heading h2{
+        font-size: 19px;
+    }
+
+    .heading h4{
+        font-size: 15px;
+    }
+}

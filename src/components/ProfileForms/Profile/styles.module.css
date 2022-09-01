@@ -1,5 +1,5 @@
 .profile_container{
-    max-width: 900px;
+    max-width: 950px;
     margin: auto;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .columns_container{
-    max-width: 1000px;
+    max-width: 950px;
     margin: auto;
     display: flex;
     align-items: flex-start;
@@ -39,6 +39,7 @@
     height: auto;
 }
 
+
 input[type=text]{
     width: 100%;
     padding: 12px;
@@ -49,20 +50,22 @@ input[type=text]{
 }
 
 .form_control{
-    margin: 18px 0;
+    margin: 25px 0;
+    max-width: 450px;
 }
 
 .profile_image{
-    width: 185px;
-    height: 160px;
+    width: 180px;
+    height: 150px;
     margin: auto;
-    margin-bottom: 10px;
+    
 }
 
 .avatar{
     width: 100%;
     border: 2px solid #4ae;
     border-radius: 12px;
+    margin-bottom: 18px;
 }
 
 .text{
@@ -78,24 +81,7 @@ input[type=text]{
     margin: 5px 25px;
 }
 
-p{
-    font-size: small;
-    margin-left: 10px;
-}
-
-.other_details{
-    max-width: 100%;
-    margin-top: 15px;
-}
-
-.teams{
-    display: flex;
-    width: auto;
-    gap: 30px;
-}
-
-.teams li, .participation li {
-    color: black;
+label{
     font-size: 15px;
 }
 
@@ -114,7 +100,7 @@ p{
     }
 
     .first_column,.second_column{
-        max-width: 450px;
+        max-width: 400px;
         margin: auto;
         margin-bottom: 30px;
     }
@@ -123,9 +109,21 @@ p{
         padding: 0 20px;
     }
 
+    .form_control{
+        max-width: 350px;
+    }
+
     .heading img{
         position: absolute;
         right: 15px;
+    }
+
+    .heading h2{
+        font-size: 18px;
+    }
+
+    .first_column h3{
+        font-size: 16px;
     }
 
 }

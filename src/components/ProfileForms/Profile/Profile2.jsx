@@ -56,27 +56,27 @@ const Profile2 = () => {
                         
                             <div className={styles.form_control}>
                                 <label htmlFor="school_name">School Name</label>
-                                <input type="text" value={formData.institution} disabled />
+                                <input type="text" value={formData.school_name} disabled />
                             </div>
 
                             <div className={styles.form_control}>
                                 <label htmlFor="school location">School Location</label>
-                                <input type="text" value={formData.faculty} disabled />
+                                <input type="text" value={formData.school_location} disabled />
                             </div>
                             
                             <div className={styles.form_control}>
                                 <label htmlFor="Faculty">Class</label>
-                                <input type="text" value={formData.level} disabled />
+                                <input type="text" value={formData.class} disabled />
                             </div>
 
                             <div className={styles.form_control}>
                                 <label htmlFor="admission year">Year of Admission</label>
-                                <input type="text" value={formData.admission} disabled />
+                                <input type="text" value={formData.admission_year} disabled />
                             </div>
                             
                             <div className={styles.form_control}>
                                 <label htmlFor="graduation year">Expected year of Graduation </label>
-                                <input type="text" value={formData.graduation} disabled />
+                                <input type="text" value={formData.graduation_year} disabled />
                             </div>
                         
                     </form>
