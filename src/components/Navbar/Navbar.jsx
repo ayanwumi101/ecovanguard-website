@@ -61,10 +61,11 @@ const Navbar = () => {
                         <li>About Us</li>
                         <Link to='/projects'><li>Projects</li></Link>
                         <Link to='/donate'><li>Donate</li></Link>
-                        <div className={styles.login}>
+                        <Link to='/blog'><li>Donate</li></Link>
+                        <Link to='/create_account'><div className={styles.login}>
                             <FaSignInAlt />
                             <span>Account</span>
-                        </div>
+                        </div></Link>
                     </ul>
                     
                 </div>
