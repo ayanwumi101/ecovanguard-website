@@ -12,7 +12,7 @@
 
 .weather {
     width: 300px;
-    height: 400px;
+    height: auto;
     border: 1px solid lightgrey;
     border-radius: 8px;
     margin-top: 30px;
@@ -23,6 +23,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between  ;
+}
+
+#weather_text{
+    font-size: 25px;
 }
 
 .post_container{
@@ -100,6 +104,18 @@
 
 .post_details p {
     margin: 0;
+}
+
+.cloud {
+    font-size: 75px;
+}
+
+.temp{
+    font-size: 50px;
+}
+
+.column{
+    display: flex;
 }
 
 

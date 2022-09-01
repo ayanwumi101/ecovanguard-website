@@ -37,7 +37,6 @@ const integer2 = Number(long).toFixed(2);
       const response = await axios.get(url);
       const data = await response.data;
       setWeatherData(data);
-      console.log(weather);
     } catch (error) {
       console.log(error.response);
     }
@@ -67,7 +66,8 @@ const integer2 = Number(long).toFixed(2);
   }, [])
   console.log(post);
   const date = new Date().toDateString();
-  const {main, coord, weather} = weatherData;
+  console.log(weatherData);
+  const {main, coord, weather, wind, sys, timezone} = weatherData;
   return (
     <div className={styles.container}>
 
@@ -96,7 +96,8 @@ const integer2 = Number(long).toFixed(2);
             })}
             </div>
 
-            <div className={styles.weather}>
+          <div>
+            {main && <div className={styles.weather}>
                   <div className={styles.heading}>
                     <h4>Your local weather</h4>
                     <span><MdMyLocation/></span>
@@ -104,18 +105,37 @@ const integer2 = Number(long).toFixed(2);
                   <div className={styles.line}></div>
 
                   <div className="content">
-                    <div>
+                    <div className={styles.column}>
                       <div>
-                        <div><MdOutlineCloud /></div>
-                        <p></p>
+                        <div><MdOutlineCloud className={styles.cloud} /></div>
+                        <p id={styles.weather_text}>{weather[0].main && weather[0].main}</p>
                       </div>
 
-                      <div className="temp">
-                        {/* <p>{weather.main.temp}</p> */}
+                      <div className={styles.temp}>
+                        {main.temp && parseFloat(main.temp).toFixed(1)}K
                       </div>
                     </div>
+
+                    <div>
+                      Your Coordinates
+                      <p>Latitude: {coord.lat}</p>
+                      <p>Latitude: {coord.lon}</p>
+                      <p>Timezone: {timezone && timezone}</p>
+                      <p><strong>Country: {sys.country}</strong></p>
+                    </div>
+
+                    <div>
+                      Weather Details
+                      <p>Relative Humidity: {main.humidity}</p>
+                      <p>Pressure: {main.pressure}</p>
+                      <p>Maximum Temp: {main.temp_max}</p>
+                      <p>Minimum Temp: {main.temp_min}</p>
+                      <p>Weather: {weather[0].main}</p>
+                      <p>Wind Speed: {wind.speed} Degree: {wind.deg}</p>
+                    </div>
                   </div>
-            </div>
+            </div>}
+          </div>
         </div>
 
     </div>
