@@ -71,7 +71,7 @@ const integer2 = Number(long).toFixed(2);
   return (
     <div className={styles.container}>
 
-        <h2>Latest Posts</h2>
+       <h2>Latest Posts</h2>
         <p>{date}</p>
 
         <div className={styles.sub_container}>
@@ -116,21 +116,22 @@ const integer2 = Number(long).toFixed(2);
                       </div>
                     </div>
 
-                    <div>
+                    <div className={styles.coords}>
                       Your Coordinates
-                      <p>Latitude: {coord.lat}</p>
-                      <p>Latitude: {coord.lon}</p>
+                      <p>Latitude: {integer1}</p>
+                      <p>Longitude: {integer2}</p>
                       <p>Timezone: {timezone && timezone}</p>
                       <p><strong>Country: {sys.country}</strong></p>
                     </div>
 
-                    <div>
+                    <div className={styles.coords}>
                       Weather Details
                       <p>Relative Humidity: {main.humidity}</p>
                       <p>Pressure: {main.pressure}</p>
                       <p>Maximum Temp: {main.temp_max}</p>
                       <p>Minimum Temp: {main.temp_min}</p>
-                      <p>Weather: {weather[0].main}</p>
+                      <p>Weather: {weather[0].description
+                      }</p>
                       <p>Wind Speed: {wind.speed} Degree: {wind.deg}</p>
                     </div>
                   </div>
